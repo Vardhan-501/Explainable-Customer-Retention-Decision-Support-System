@@ -214,7 +214,7 @@ If neither provider is configured, the AI Summary tab remains usable: it generat
 ## Project structure
 
 ```text
-Customer-Churn-Prediction/
+Explainable-Customer-Retention-Decision-Support-System/
 ├── app.py
 ├── README.md
 ├── requirements.txt
