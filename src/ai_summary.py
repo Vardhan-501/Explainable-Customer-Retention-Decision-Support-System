@@ -17,7 +17,7 @@ SUMMARY_SCHEMA = {
 }
 
 DEFAULT_OLLAMA_URL = "http://localhost:11434"
-DEFAULT_OLLAMA_MODEL = "llama3.2:3b"
+DEFAULT_OLLAMA_MODEL = "qwen3.5:4b"
 DEFAULT_OPENAI_MODEL = "gpt-4o-mini"
 
 

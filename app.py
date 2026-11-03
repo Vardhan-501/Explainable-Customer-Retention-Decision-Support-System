@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from src.ai_summary import ai_summary_available, build_verified_facts, generate_business_summary, summary_provider
+from src.ai_summary import ai_summary_available, build_verified_facts, generate_business_summary, ollama_model, summary_provider
 from src.explain import explain_prediction
 from src.metrics import load_dataset
 from src.predict import load_model, model_schema, predict_customer
@@ -144,7 +144,7 @@ else:
         st.caption("The language model receives verified risk, explanation, and recommendation facts only; it does not replace the churn model.")
         provider = summary_provider()
         if provider == "ollama":
-            st.success("Using local Ollama model: llama3.2:3b")
+            st.success(f"Using local Ollama model: {ollama_model()}")
         elif provider == "openai":
             st.info("Using OpenAI because local Ollama is unavailable.")
         else:

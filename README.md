@@ -182,7 +182,7 @@ The preferred local setup uses [Ollama](https://ollama.com/) so the business sum
 Install Ollama and download the configured local model:
 
 ```powershell
-ollama pull llama3.2:3b
+ollama pull qwen3.5:4b
 ```
 
 The application expects Ollama at:
@@ -195,7 +195,7 @@ Optional configuration variables are:
 
 ```powershell
 $env:OLLAMA_URL="http://localhost:11434"
-$env:OLLAMA_MODEL="llama3.2:3b"
+$env:OLLAMA_MODEL="qwen3.5:4b"
 ```
 
 The application uses Ollama first. If Ollama is unavailable and `OPENAI_API_KEY` is configured, it uses OpenAI as a fallback. On Streamlit Cloud, add the key under **App settings → Secrets** rather than committing it to GitHub:
@@ -316,4 +316,3 @@ The application should not be used to deny service, penalize customers, or make 
 [3]: [SHAP documentation](https://shap.readthedocs.io/)
 [4]: [Ollama documentation](https://docs.ollama.com/)
 [5]: [IBM Telco Customer Churn dataset information](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-

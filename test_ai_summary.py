@@ -11,6 +11,10 @@ FACTS = {
 }
 
 
+def test_default_ollama_model_matches_installed_model():
+    assert ai_summary.ollama_model() == "qwen3.5:4b"
+
+
 def test_fallback_summary_is_available_without_external_provider(monkeypatch):
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     monkeypatch.setattr(ai_summary, "ollama_available", lambda: False)
