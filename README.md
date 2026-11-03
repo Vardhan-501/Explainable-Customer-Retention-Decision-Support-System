@@ -198,9 +198,18 @@ $env:OLLAMA_URL="http://localhost:11434"
 $env:OLLAMA_MODEL="llama3.2:3b"
 ```
 
-The application uses Ollama first. If Ollama is unavailable and `OPENAI_API_KEY` is configured, it can use OpenAI as a fallback. Never commit API keys to GitHub.
+The application uses Ollama first. If Ollama is unavailable and `OPENAI_API_KEY` is configured, it uses OpenAI as a fallback. On Streamlit Cloud, add the key under **App settings → Secrets** rather than committing it to GitHub:
+
+```toml
+OPENAI_API_KEY = "your-api-key"
+OPENAI_MODEL = "gpt-4o-mini"
+```
+
+`OPENAI_MODEL` is optional and can be changed to a model available to your API account. The app reads both environment variables and Streamlit Secrets, so the same code works locally and in the deployed app. `OPENAI_BASE_URL` is also supported for OpenAI-compatible providers.
 
 > A local Ollama process works when the application runs on your own computer. A public Streamlit server cannot automatically access Ollama running on your private computer’s `localhost`.
+
+If neither provider is configured, the AI Summary tab remains usable: it generates a deterministic summary from the verified churn probability, model-associated risk factors, and existing recommendations. This fallback does not pretend to be an LLM response, and its caveat is shown in the UI. Therefore, missing Ollama or OpenAI configuration no longer leaves the feature disabled or displays a dead-end setup error.
 
 ## Project structure
 
@@ -307,5 +316,4 @@ The application should not be used to deny service, penalize customers, or make 
 [3]: [SHAP documentation](https://shap.readthedocs.io/)
 [4]: [Ollama documentation](https://docs.ollama.com/)
 [5]: [IBM Telco Customer Churn dataset information](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
-
 

@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from src.ai_summary import ai_summary_available, build_verified_facts, generate_business_summary, ollama_available
+from src.ai_summary import ai_summary_available, build_verified_facts, generate_business_summary, summary_provider
 from src.explain import explain_prediction
 from src.metrics import load_dataset
 from src.predict import load_model, model_schema, predict_customer
@@ -142,14 +142,14 @@ else:
     with tabs[5]:
         st.subheader("Optional AI-generated business summary")
         st.caption("The language model receives verified risk, explanation, and recommendation facts only; it does not replace the churn model.")
-        provider_available = ai_summary_available()
-        if ollama_available():
+        provider = summary_provider()
+        if provider == "ollama":
             st.success("Using local Ollama model: llama3.2:3b")
-        elif provider_available:
+        elif provider == "openai":
             st.info("Using OpenAI because local Ollama is unavailable.")
         else:
-            st.info("Start Ollama and run `ollama pull llama3.2:3b`, or configure OPENAI_API_KEY to enable this feature.")
-        if provider_available and st.button("Generate business summary"):
+            st.info("No external language model is configured. The app will generate a built-in summary from the verified model facts. Add OPENAI_API_KEY in Streamlit Secrets for an AI-written summary.")
+        if ai_summary_available() and st.button("Generate business summary"):
             try:
                 facts = build_verified_facts(result, explanation, actions)
                 with st.spinner("Generating summary from verified facts..."):
