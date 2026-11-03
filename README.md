@@ -1,4 +1,4 @@
-# Customer Churn Prediction Analysis
+# Explainable Customer Retention Decision-Support System
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://ibm-telco-churn-prediction.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -7,7 +7,7 @@
 
 ## Live demo
 
-Open the application here: **[Customer Churn Prediction Analysis — Streamlit Demo](https://ibm-telco-churn-prediction.streamlit.app/)**.
+Open the application here: **[Explainable Customer Retention Decision-Support System — Streamlit Demo](https://ibm-telco-churn-prediction.streamlit.app/)**.
 
 The demo may be asleep after a period of inactivity. If Streamlit displays a wake-up message, select **Yes, get this app back up!** and wait for the application to load. The public demo uses the deployed application environment; the optional local Ollama summary is intended for local execution unless Ollama is hosted separately.
 

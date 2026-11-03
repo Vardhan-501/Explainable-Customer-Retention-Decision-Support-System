@@ -13,7 +13,7 @@ from src.segmentation import fit_segments, profile_segments
 from src.monitoring import data_quality_summary, numeric_drift
 
 ROOT = Path(__file__).resolve().parent
-st.set_page_config(page_title="Telco Churn Decision Support", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Explainable Customer Retention Decision-Support System", page_icon="📊", layout="wide")
 
 st.markdown(
     """
@@ -43,7 +43,7 @@ NUMERIC_RANGES = {
 }
 
 with st.sidebar:
-    st.title("Telco Churn Decision Support")
+    st.title("Explainable Customer Retention")
     st.caption("Validated prediction, explanation, and retention investigation support.")
     st.divider()
     with st.form("customer_form"):
