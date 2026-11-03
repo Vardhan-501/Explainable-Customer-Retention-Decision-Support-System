@@ -13,6 +13,8 @@ The demo may be asleep after a period of inactivity. If Streamlit displays a wak
 
 ## Project overview
 
+**Explainable Customer Retention Decision-Support System** is an interactive, explainable-AI application for estimating customer churn risk and supporting transparent retention investigations.
+
 Customer churn creates recurring-revenue risk and increases customer-acquisition pressure. This project analyzes historical telecom customer behavior and provides an interactive application for estimating churn risk, understanding the model’s individual prediction factors, and prioritizing transparent retention investigations.
 
 The project combines the original data-science workflow with a more maintainable explainable-AI application:
